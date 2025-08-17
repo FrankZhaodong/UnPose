@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>UnPose</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,21 +52,32 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">UnPose: Uncertainty-Guided Diffusion Priors for Zero-Shot Pose Estimation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
+
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://scholar.google.ca/citations?user=ISNrsywAAAAJ&hl=en&oi=sra" target="_blank">Zhaodong Jiang<sup>1,2</sup></a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://sinashish.in/" target="_blank">Ashish Sinha<sup>1</sup></a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://scholar.google.com/citations?user=SkzzXSYAAAAJ&hl=en" target="_blank">Tongtong Cao<sup>1</sup></a>,
                   </span>
-                  </div>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=P4Rp5uAAAAAJ&hl=en" target="_blank">Yuan Ren<sup>1</sup></a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.ca/citations?user=-rCulKwAAAAJ&hl=en" target="_blank">Bingbing Liu<sup>1</sup></a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://binbin-xu.github.io/" target="_blank">Binbin Xu<sup>1</sup></a>
+                  </span>
+                </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    
+                    <span class="author-block"><sup>1</sup>University of Toronto, <sup>2</sup>Noah's Ark Lab, Huawei Technologies<br>CoRL 2025</span>
+                     
                   </div>
 
                   <div class="column has-text-centered">
@@ -83,7 +94,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,10 +102,10 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -102,7 +113,7 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
@@ -127,13 +138,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
-      </video>
+      </video> -->
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Video Coming Soon!
       </h2>
     </div>
   </div>
@@ -148,7 +158,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          Estimating the 6D pose of novel objects is a fundamental yet challenging problem in robotics, often relying on access to object CAD models. However, acquiring such models can be costly and impractical. Recent approaches aim to bypass this requirement by leveraging strong priors from foundation models to reconstruct objects from single or multi-view images, but typically require additional training or produce hallucinated geometry. To this end, we propose <em>UnPose</em>, a novel framework for zero-shot, model-free 6D object pose estimation and reconstruction that exploits 3D priors and uncertainty estimates from a pre-trained diffusion model. Specifically, starting from a single-view RGB-D frame, <em>UnPose</em> uses a multi-view diffusion model to estimate an initial 3D model using 3D Gaussian Splatting (3DGS) representation, along with pixel-wise epistemic uncertainty estimates. As additional observations become available, we incrementally refine the 3DGS model by fusing new views guided by the diffusion model's uncertainty, thereby, continuously improving the pose estimation accuracy and 3D reconstruction quality. To ensure global consistency, the diffusion prior-generated views and subsequent observations are further integrated in a pose graph and jointly optimized into a coherent 3DGS field. Extensive experiments demonstrate that <em>UnPose</em> significantly outperforms existing approaches in both 6D pose estimation accuracy and 3D reconstruction quality. We further showcase its practical applicability in real-world robotic manipulation tasks.
           </p>
         </div>
       </div>
@@ -158,124 +168,190 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Method Overview -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
+    <h2 class="title is-3">Method Overview</h2>
+    <img src="static/images/method_overview.png" alt="MY ALT TEXT"/>
+    <p>
+      Starting from a single-view RGB-D frame, UnPose uses a multi-view diffusion model to estimate an initial 3D model using 3D
+      Gaussian Splatting (3DGS) representation, along with pixel-wise epistemic uncertainty estimates.
+      As additional observations become available, we incrementally refine the 3DGS model by fusing
+      new views guided by the diffusion model's uncertainty, thereby, continuously improving the pose
+      estimation accuracy and 3D reconstruction quality. Right: We provide a schematic overview of the
+      initialization module.
+    </p>
 </div>
 </div>
 </section>
-<!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
+<!-- Method Breakdown -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-4">Initialization using the first frame</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <img src="static/images/init_uncertainty.gif" alt="MY ALT TEXT"/>
+        <h2 class="title is-5">UnPose synthesizes multiview diffusion images with uncertainty estimates using the first given frame.</h2>
+        <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p> -->
+        <!-- <p class="image-description" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em;">
+          <span class="mathjax-latex" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em; display: block;">
+          Without relying on any CAD models or pre-reconstructed models, our system initializes from an arbitrary RGB-D frame \\(\mbc{I}_{0} = \{ \mbf{I}_{0} \in \mathbb{R}^{w \times h \times 3}, \mbf{D}_{0} \in \mathbb{R}^{w \times h }\}\\) by synthesizing multiview diffusion images \\(\mbfhat{I}_{1:k}\\) using the Wonder3D where \\(k\\) is set to be 6. We further estimate the corresponding pixel-wise uncertainty \\(\operatorname{Var}(\mbfhat{I})_{1:k} \in \mathbb{R}^{w \times h }\\) for the diffused views and align them together with the initial frame \\(\mbc{I}_{0}\\) following VGGT. The aligned relative poses \\(\T{C_0}{C_k}\\) together with the estimated uncertainties are refined using pose graph optimization to reconstruct an initial 3DGS object field \\(\boldsymbol{Q}_{o}\\).
+          </span>
+        </p> -->
+        <!-- MathJax for LaTeX rendering -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p> -->
+        <h2 class="title is-5">UnPose leverages the synthesized images to build an initial pose graph and Gaussian Splatting representation to do the pose estimation.</h2>
+
+
+      </div>
+      </div>
+      <h2 class="title is-4">Incorporating future frames</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+          <!-- <p>Incorporating future frames.</p> -->
+          <h2 class="title is-5">As pose estimation is performed on subsequent frames, new observations are incrementally incorporated into the pose graph if necessary, and backend optimization is conducted to refine the overall estimation.</h2>
+          <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Performance -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Performance</h2>
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h3 class="title is-5 has-text-centered">Pose Estimation</h3>
+      <!-- 1x1 image slot -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
+            <div class="columns is-centered">
+              <figure style="width:100%;">
+                <img src="static/images/pose_estimation_compare.png" alt="Pose Estimation 1x1" style="width:100%;" />
+                <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">Qualitative Comparison at 8 Images</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+      
+      <!-- 2x2 image grid -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
+            <div class="columns is-centered">
+              <div class="columns">
+                <div class="column is-half">
+                  <figure style="width:100%;">
+                    <img src="static/images/ycbv_add.png" alt="Pose Estimation 2x2-1" style="width:100%; margin-bottom:12px;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">ADD for YCB-V Dataset</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-half">
+                  <figure style="width:100%;">
+                    <img src="static/images/ycbv_adds.png" alt="Pose Estimation 2x2-2" style="width:100%; margin-bottom:12px;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">ADD-S for YCB-V Dataset</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="columns">
+                <div class="column is-half">
+                  <figure style="width:100%;">
+                    <img src="static/images/lmo_add.png" alt="Pose Estimation 2x2-3" style="width:100%;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">ADD for LM-O Dataset</figcaption>
+                  </figure>
+                </div>
+                <div class="column is-half">
+                  <figure style="width:100%;">
+                    <img src="static/images/lmo_adds.png" alt="Pose Estimation 2x2-4" style="width:100%;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">ADD-S for LM-O Dataset</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
+      </div>
+      
+      
+      <h3 class="title is-5 has-text-centered">Object Reconstruction</h3>
+      <!-- 1x1 image slot -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
+            <div class="columns is-centered">
+              <figure style="width:100%;">
+                <img src="static/images/unpose-recon2.png" alt="Object Recon 1x1" style="width:100%;" />
+                <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">Qualitative Results for Object Reconstruction</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+      </div>
+      <!-- 1x2 image grid -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
+            <div class="columns is-centered">
+              <div class="columns">
+                <div class="column">
+                  <figure style="width:100%;">
+                    <img src="static/images/cd_per_object_point.png" alt="Object Recon 1x2-1" style="width:100%; margin-bottom:12px;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">Chamfer Distance Comparison</figcaption>
+                  </figure>
+                </div>
+                <div class="column">
+                  <figure style="width:100%;">
+                    <img src="static/images/recon_per_object.png" alt="Object Recon 1x2-2" style="width:100%; margin-bottom:12px;" />
+                    <figcaption class="image-caption" style="text-align:center; font-size:0.95em; color:#6c757d;">Reconstruction Time Comparison</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
+<!-- Real Robot Experiment Video Section -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+      <h2 class="title is-3 has-text-left">Real Robot Experiment</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <!-- Replace the src with your actual video file path -->
+          <video controls style="width:100%;">
+            <source src="static/videos/real_robot_experiment.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="mt-3">Demonstration of UnPose in a real-world robotic manipulation task.</p>
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
-
+  </div>
+</section>
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
