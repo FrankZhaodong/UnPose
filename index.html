@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
+  <meta name="description" content="Uncertainty-Guided Diffusion Priors for Zero-Shot Pose Estimation">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:url" content="https://unposepe.github.io"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/images/method_overview.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -17,10 +17,10 @@
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="static/images/pose_estimation_compare.png">
+  <meta name="twitter:card" content="method overview">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="pose estimation, uncertainty estimation, diffusion models, 3D reconstruction, robotics, zero-shot learning, gaussian splatting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -41,6 +41,7 @@
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
@@ -190,51 +191,166 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-4">Initialization using the first frame</h2>
+      <h4 class="title is-5">Initialization from First Frame</h4>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
         <img src="static/images/init_uncertainty.gif" alt="MY ALT TEXT"/>
-        <h2 class="title is-5">UnPose synthesizes multiview diffusion images with uncertainty estimates using the first given frame.</h2>
-        <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p>
+        <!-- <h2 class="title is-5">
+          UnPose synthesizes multiview diffusion images with uncertainty estimates using the first given frame.
+        </h2> -->
+        <p class="image-caption" style="font-size: 0.85em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">
+            Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.
+        </p>
+        <p class="image-description">
+          UnPose synthesizes multiview diffusion images with uncertainty estimates using the first frame. The initial reconstruction, represented as 3DGS, is refined to metric scale using real-world observations from the first frame, thereby, initializing the pose graph which is metrically consistent while still preseving the uncertainty estimates.
+        </p>
         <!-- <p class="image-description" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em;">
           <span class="mathjax-latex" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em; display: block;">
           Without relying on any CAD models or pre-reconstructed models, our system initializes from an arbitrary RGB-D frame \\(\mbc{I}_{0} = \{ \mbf{I}_{0} \in \mathbb{R}^{w \times h \times 3}, \mbf{D}_{0} \in \mathbb{R}^{w \times h }\}\\) by synthesizing multiview diffusion images \\(\mbfhat{I}_{1:k}\\) using the Wonder3D where \\(k\\) is set to be 6. We further estimate the corresponding pixel-wise uncertainty \\(\operatorname{Var}(\mbfhat{I})_{1:k} \in \mathbb{R}^{w \times h }\\) for the diffused views and align them together with the initial frame \\(\mbc{I}_{0}\\) following VGGT. The aligned relative poses \\(\T{C_0}{C_k}\\) together with the estimated uncertainties are refined using pose graph optimization to reconstruct an initial 3DGS object field \\(\boldsymbol{Q}_{o}\\).
-          </span> -->
-        </p> -->
+          </span>
+        </p>  -->
         <!-- MathJax for LaTeX rendering -->
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+       
 
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <!-- <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/> -->
         <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p> -->
-        <h2 class="title is-5">UnPose leverages the synthesized images to build an initial pose graph and Gaussian Splatting representation to do the pose estimation.</h2>
+        <!-- <h2 class="title is-5">UnPose leverages the synthesized images to build an initial pose graph and Gaussian Splatting representation to do the pose estimation.</h2> -->
 
 
       </div>
       </div>
-      <h2 class="title is-4">Incorporating future frames</h2>
+      <h4 class="title is-5">Incorporating Future Frames</h4>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+          <!-- <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/> -->
           <!-- <p>Incorporating future frames.</p> -->
-          <h2 class="title is-5">As pose estimation is performed on subsequent frames, new observations are incrementally incorporated into the pose graph if necessary, and backend optimization is conducted to refine the overall estimation.</h2>
-          <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+          <p class="image-description is-5">
+            Pose estimation is performed on the initial optimized 3DGS. 
+            The initial 6DOF pose is incrementally refined by incorporating the subsequent frames in the pose graph.
+          </p>
+
+          <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/> -->
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- Performance -->
+<!-- Results carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Performance</h2>
-      <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Results</h2>
+      <!-- style="border: 2px solid #e4e0e0; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;"  -->
+      <div id="results-carousel" class="carousel results-carousel columns">
+       <div class="item  is-four-fifths"> 
+        <h2 class="subtitle has-text-centered">
+          Qualitative comparison of Pose Estimation with 8 Images.
+        </h2>
+        <!-- is-four-fifths -->
+        <img src="static/images/pose_estimation_compare.png" width="100%" alt="Qualitative results estimation"/>
+      </div>
+      <div class="item  is-half">
+        <h2 class="subtitle has-text-centered">
+          Qualitative Comparison of Object reconstruction on YCB-V dataset.
+        </h2>
+        <img src="static/images/unpose-recon2.png" width="100%" alt="object reconstruction"/>
+        
+      </div>
+      <div class="item  is-half">
+        <div class="columns">
+          
+          <div class="column is-half">
+            <h2 class=" subtitle has-text-centered">
+              Pose estimation comparison on LMO w/ ADD.
+            </h2>
+              <img src="static/images/lmo_add.png"   alt="lmo-add"/>
+              <!-- <h2 class="subtitle has-text-centered">
+                Pose estimation results on the LM-O dataset.
+              </h2> -->
+            </div>
+            <div class="column is-half">
+              <h2 class=" subtitle has-text-centered">
+                Pose estimation comparison on LMO w/ ADD-S.
+              </h2>
+              <img src="static/images/lmo_adds.png"   alt="lmo-adds"/>
+              <!-- <h2 class="subtitle has-text-centered">
+                Pose estimation results on the LM-O dataset with ADD-S metric.
+              </h2> -->
+          </div>
+        </div>
+      </div>
+        
+    <div class="item">
+        <div class="columns is-centered">
+          
+          <div class="column is-half">
+            <h2 class="subtitle has-text-centered">
+              Pose estimation comparison on YCB-V w/ ADD.
+            </h2>
+            <!-- Your image here -->
+                <img src="static/images/ycbv_add.png" alt="ycbv-add"/>
+                <!-- <h2 class="subtitle has-text-centered">
+                  Pose estimation results on the YCB-V dataset.
+                </h2> -->
+            </div>
+            <div class="column is-half">
+              <h2 class="subtitle has-text-centered">
+                Pose estimation comparison on YCB-V  w/ ADD-S.
+                <!-- Quantitative Comparison of Object Reconstruction on YCB-V dataset. -->
+              </h2>
+              <img src="static/images/ycbv_adds.png" alt="ycbv-adds"/>
+              <!-- <h2 class="subtitle has-text-centered">
+                Pose estimation results on the YCB-V dataset with ADD-S metric.
+              </h2> -->
+            </div>
+        </div>
+    </div>
+
+      <div class="item">
+        <div class="columns is-centered">
+          
+          <div class="column is-half">
+            <h2 class="subtitle has-text-centered">
+              Object Reconstruction Efficacy on YCB-V.
+            </h2>
+            <!-- Your image here -->
+                <img src="static/images/cd_per_object_point.png" alt="cd-object"/>
+                <!-- <h2 class="subtitle has-text-centered">
+                  Pose estimation results on the YCB-V dataset.
+                </h2> -->
+            </div>
+            <div class="column is-half">
+              <h2 class="subtitle has-text-centered">
+                Object Reconstruction Efficiency on YCB-V.
+                <!-- Quantitative Comparison of Object Reconstruction on YCB-V dataset. -->
+              </h2>
+              <img src="static/images/recon_per_object.png" alt="recon-time"/>
+              <!-- <h2 class="subtitle has-text-centered">
+                Pose estimation results on the YCB-V dataset with ADD-S metric.
+              </h2> -->
+            </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+</section>
+<!-- End results carousel -->
+
+
+<!-- Performance -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Results</h2>
+
+
       <div class="column is-four-fifths">
       <h3 class="title is-5 has-text-centered">Pose Estimation</h3>
       <!-- 1x1 image slot -->
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
             <div class="columns is-centered">
@@ -248,7 +364,7 @@
       </div>
       
       <!-- 2x2 image grid -->
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
             <div class="columns is-centered">
@@ -290,7 +406,7 @@
       
       <h3 class="title is-5 has-text-centered">Object Reconstruction</h3>
       <!-- 1x1 image slot -->
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
             <div class="columns is-centered">
@@ -303,7 +419,7 @@
         </div>
       </div>
       <!-- 1x2 image grid -->
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <div style="border: 2px solid #111; border-radius: 10px; padding: 18px 12px; margin-bottom: 8px;">
             <div class="columns is-centered">
@@ -325,11 +441,11 @@
           </div>
         </div>
       </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </div> -->
+      <!-- </div> 
+    </div> 
+  </div> 
+</section>  -->
 
 <!-- Real Robot Experiment Video Section -->
 <section class="hero is-small is-light">
@@ -375,7 +491,8 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            <!-- You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. -->
+             <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
