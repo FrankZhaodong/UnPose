@@ -2,7 +2,7 @@
 
 [Zhaodong Jiang](https://scholar.google.ca/citations?user=ISNrsywAAAAJ&hl=en&oi=sra)$^{1,2}$, [Ashish Sinha](https://sinashish.github.io)$^{1}$,  [Tongtong Cao](https://scholar.google.com/citations?user=SkzzXSYAAAAJ&hl=en)$^{1}$, [Yuan Ren](https://scholar.google.com/citations?user=P4Rp5uAAAAAJ&hl=en)$^{1}$, [Bingbing Liu](https://scholar.google.ca/citations?user=-rCulKwAAAAJ&hl=en)$^{1}$, [Binbin Xu](https://binbin-xu.github.io/)$^{1}$
 
-$^{1}$ Huawei Noah's Ark Lab, Toronto  $^{2}$University of Toronto, Canada
+$^{1}$ Huawei Noah's Ark Lab, Toronto  $^{2}$ University of Toronto, Canada
 
 
 This repository contains the code and video demos for our project website [UnPose](https://unposepe.github.io/) accepted to [CORL 2025](https://www.corl.org/).
