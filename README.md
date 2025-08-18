@@ -1,50 +1,37 @@
-# Academic Project Page Template
-This is an academic paper project page template.
+# UnPose: Uncertainty-Guided Diffusion Priors for Zero-Shot Pose Estimation
+
+[Zhaodong Jiang](https://scholar.google.ca/citations?user=ISNrsywAAAAJ&hl=en&oi=sra)$^{1,2}$, [Ashish Sinha](https://sinashish.github.io)$^{1}$,  [Tongtong Cao](https://scholar.google.com/citations?user=SkzzXSYAAAAJ&hl=en)$^{1}$, [Yuan Ren](https://scholar.google.com/citations?user=P4Rp5uAAAAAJ&hl=en)$^{1}$, [Bingbing Liu](https://scholar.google.ca/citations?user=-rCulKwAAAAJ&hl=en)$^{1}$, [Binbin Xu](https://binbin-xu.github.io/)$^{1}$
+
+$^{1}$ Huawei Noah's Ark Lab, Toronto  $^{2}$University of Toronto, Canada
 
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+This repository contains the code and video demos for our project website [UnPose](https://unposepe.github.io/) accepted to [CORL 2025](https://www.corl.org/).
+
+![Method Overview](./static/images/method_overview.png)
 
 
+> TL;Dr: A zero-shot, model-free 6D pose estimation and reconstruction framework that incrementally refines a 3D Gaussian Splatting model using diffusion priors and uncertainty-guided fusion from RGB-D inputs.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## Core Idea
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+Estimate epistemic uncertainty from a pretrained 2D-to-3D diffusion model to continually refine a 3DGS-represented object for 6DOF pose estimation in a factor-graph optimzation framework.
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+![Initialization module](./static/images/init_uncertainty.gif)
 
-## Components
-- Teaser video
-- Images Carousel
-- Youtube embedding
-- Video Carousel
-- PDF Poster
-- Bibtex citation
+<!-- **NOTE:** We might release the code in the future once it has obtained legal approval. -->
 
-## Tips:
-- The `index.html` file contains comments instructing you what to replace, you should follow these comments.
-- The `meta` tags in the `index.html` file are used to provide metadata about your paper 
-(e.g. helping search engine index the website, showing a preview image when sharing the website, etc.)
-- The resolution of images and videos can usually be around 1920-2048, there rarely a need for better resolution that take longer to load. 
-- All the images and videos you use should be compressed to allow for fast loading of the website (and thus better indexing by search engines). For images, you can use [TinyPNG](https://tinypng.com), for videos you can need to find the tradeoff between size and quality.
-- When using large video files (larger than 10MB), it's better to use youtube for hosting the video as serving the video from the website can take time.
-- Using a tracker can help you analyze the traffic and see where users came from. [statcounter](https://statcounter.com) is a free, easy to use tracker that takes under 5 minutes to set up. 
-- This project page can also be made into a github pages website.
-- Replace the favicon to one of your choosing (the default one is of the Hebrew University). 
-- Suggestions, improvements and comments are welcome, simply open an issue or contact me. You can find my contact information at [https://horwitz.ai](https://horwitz.ai)
+## BibTex
+
+If you use this work in your research, please cite our paper:
+
+```bibtex
+@inproceedings{jiang2025unpose,
+  title={UnPose: Uncertainty-Guided Diffusion Priors for Zero-Shot Pose Estimation},
+  author={Jiang, Zhaodong and Sinha, Ashish and Cao, Tongtong and Ren, Yuan and Liu, Bingbing and Xu, Binbin},
+  booktitle={Conference on Robot Learning (CoRL)},
+  year={2025}
+}
+```
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
