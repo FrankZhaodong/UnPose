@@ -76,7 +76,7 @@
 
                   <div class="is-size-5 publication-authors">
                     
-                    <span class="author-block"><sup>1</sup>University of Toronto, <sup>2</sup>Noah's Ark Lab, Huawei Technologies<br>CoRL 2025</span>
+                    <span class="author-block"><sup>1</sup>Noah's Ark Lab, Huawei Technologies, <sup>2</sup>University of Toronto<br>CoRL 2025</span>
                      
                   </div>
 
@@ -94,7 +94,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
+                    <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -102,18 +102,18 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span> -->
+                  </span>
 
                   <!-- Github link -->
-                  <!-- <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                  <span class="link-block">
+                    <a href="https://github.com/UnPosePE/UnPosePE.github.io" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
-                </span> -->
+                </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
@@ -138,13 +138,13 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/unpose spotlight v2.mp4"
         type="video/mp4">
-      </video> -->
-      <h2 class="subtitle has-text-centered">
+      </video>
+      <!-- <h2 class="subtitle has-text-centered">
         Video Coming Soon!
-      </h2>
+      </h2> -->
     </div>
   </div>
 </section>
@@ -195,14 +195,14 @@
         <div class="column is-four-fifths">
         <img src="static/images/init_uncertainty.gif" alt="MY ALT TEXT"/>
         <h2 class="title is-5">UnPose synthesizes multiview diffusion images with uncertainty estimates using the first given frame.</h2>
-        <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p> -->
+        <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p>
         <!-- <p class="image-description" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em;">
           <span class="mathjax-latex" style="font-size: 1em; color: #222; font-style: normal; margin-top: 0.3em; display: block;">
           Without relying on any CAD models or pre-reconstructed models, our system initializes from an arbitrary RGB-D frame \\(\mbc{I}_{0} = \{ \mbf{I}_{0} \in \mathbb{R}^{w \times h \times 3}, \mbf{D}_{0} \in \mathbb{R}^{w \times h }\}\\) by synthesizing multiview diffusion images \\(\mbfhat{I}_{1:k}\\) using the Wonder3D where \\(k\\) is set to be 6. We further estimate the corresponding pixel-wise uncertainty \\(\operatorname{Var}(\mbfhat{I})_{1:k} \in \mathbb{R}^{w \times h }\\) for the diffused views and align them together with the initial frame \\(\mbc{I}_{0}\\) following VGGT. The aligned relative poses \\(\T{C_0}{C_k}\\) together with the estimated uncertainties are refined using pose graph optimization to reconstruct an initial 3DGS object field \\(\boldsymbol{Q}_{o}\\).
-          </span>
+          </span> -->
         </p> -->
         <!-- MathJax for LaTeX rendering -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <!-- <p class="image-caption" style="font-size: 0.95em; color: #6c757d; font-style: italic; margin-bottom: 0.3em;">Visualization of the uncertainty estimates of the images produced by the diffusion model during the initialization phase.</p> -->
@@ -354,7 +354,14 @@
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      If you found our work useful in your research, please consider citing: <br>
+      <pre><code>
+      @inproceedings{jiang2025unpose,
+      title={UnPose: Uncertainty-Guided Diffusion Priors for Zero-Shot Pose Estimation},
+      author={Jiang, Zhaodong and Sinha, Ashish and Cao, Tongtong and Ren, Yuan and Liu, Bingbing and Xu, Binbin},
+      booktitle={Conference on Robot Learning (CoRL)},
+      year={2025}
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
