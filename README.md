@@ -5,9 +5,9 @@
 $^{1}$ Huawei Noah's Ark Lab, Toronto  $^{2}$ University of Toronto, Canada
 
 
-This repository contains the code and video demos for our project website [UnPose](https://unposepe.github.io/) accepted to [CORL 2025](https://www.corl.org/).
+This repository contains the code and video demos for our project website [UnPose](https://frankzhaodong.github.io/UnPose/) accepted to [CORL 2025](https://www.corl.org/).
 
-![Method Overview](./static/images/method_overview.png)
+![Method Overview](./static/images/unpose-method-overview.png)
 
 
 > TL;Dr: A zero-shot, model-free 6D pose estimation and reconstruction framework that incrementally refines a 3D Gaussian Splatting model using diffusion priors and uncertainty-guided fusion from RGB-D inputs.
